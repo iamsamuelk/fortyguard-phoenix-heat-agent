@@ -15,6 +15,7 @@
     background: #fafafa;
   }
   h1 { font-size: 1.8rem; margin-bottom: 4px; }
+  h2 { font-size: 1.2rem; margin-top: 0; }
   .subtitle { color: #666; margin-bottom: 32px; }
   .badge {
     display: inline-block;
@@ -41,9 +42,66 @@
   }
   .stat .num { font-size: 1.5rem; font-weight: 700; color: #1d6fd6; }
   .stat .label { font-size: 0.85rem; color: #666; }
-  .links {
-    margin-top: 32px;
+
+  .predictor {
+    background: white;
+    border: 2px solid #1d6fd6;
+    border-radius: 12px;
+    padding: 24px;
+    margin: 32px 0;
   }
+  .predictor h2 { color: #1d6fd6; }
+  .slider-row {
+    margin: 20px 0;
+  }
+  .slider-row label {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 600;
+    margin-bottom: 6px;
+    font-size: 0.95rem;
+  }
+  .slider-row .val { color: #1d6fd6; font-weight: 700; }
+  input[type="range"] {
+    width: 100%;
+    accent-color: #1d6fd6;
+  }
+  .result {
+    margin-top: 24px;
+    padding: 20px;
+    background: #f0f6ff;
+    border-radius: 8px;
+    text-align: center;
+  }
+  .result .predicted-value {
+    font-size: 2.4rem;
+    font-weight: 800;
+    color: #1d6fd6;
+  }
+  .result .predicted-label {
+    font-size: 0.85rem;
+    color: #666;
+    margin-top: 4px;
+  }
+  .risk-tag {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 4px 14px;
+    border-radius: 12px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: white;
+  }
+  .model-note {
+    font-size: 0.8rem;
+    color: #888;
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid #e0e0e0;
+  }
+
+  .links { margin-top: 40px; }
+  .links h2 { margin-bottom: 12px; }
   .link-card {
     display: block;
     background: white;
@@ -84,11 +142,11 @@
   </div>
   <div class="stat">
     <div class="num">40.31°C</div>
-    <div class="label">Hottest stop measured (7th Ave & Tamarisk St)</div>
+    <div class="label">Hottest stop measured</div>
   </div>
   <div class="stat">
     <div class="num">R²=0.365</div>
-    <div class="label">Held-out test set performance</div>
+    <div class="label">Held-out test performance</div>
   </div>
   <div class="stat">
     <div class="num">5</div>
@@ -96,7 +154,46 @@
   </div>
 </div>
 
+<div class="predictor">
+  <h2>🔮 Try the model — live in your browser</h2>
+  <p style="font-size:0.9rem; color:#555; margin-top:-8px;">
+    Adjust the surface composition of a hypothetical bus stop and get a live
+    prediction from the actual trained regression model — no server, running
+    entirely client-side with the real fitted coefficients.
+  </p>
+
+  <div class="slider-row">
+    <label>Impervious surface (roads, buildings, pavement) <span class="val" id="imp-val">70%</span></label>
+    <input type="range" id="imp" min="0" max="100" value="70" step="1">
+  </div>
+  <div class="slider-row">
+    <label>Vegetation (grass, trees, plants) <span class="val" id="veg-val">5%</span></label>
+    <input type="range" id="veg" min="0" max="100" value="5" step="1">
+  </div>
+  <div class="slider-row">
+    <label>Open sky exposure <span class="val" id="sky-val">2%</span></label>
+    <input type="range" id="sky" min="0" max="100" value="2" step="1">
+  </div>
+
+  <div class="result">
+    <div class="predicted-value" id="prediction">—</div>
+    <div class="predicted-label">predicted peak heat index (°C, feels-like)</div>
+    <div id="risk-tag"></div>
+  </div>
+
+  <div class="model-note">
+    Model: linear regression, trained on n=40 live FortyGuard-measured Phoenix
+    bus stops, 5-fold cross-validated (R²=0.131, MAE=0.647°C), held-out test
+    R²=0.365. Coefficients: impervious +0.0087°C/%, vegetation +0.0967°C/%,
+    sky −0.0579°C/%, intercept 45.585°C. Full methodology, including an honest
+    negative result from our first modeling attempt, in the
+    <a href="https://github.com/iamsamuelk/fortyguard-phoenix-heat-agent">README</a>.
+  </div>
+</div>
+
 <div class="links">
+  <h2>Full deliverables</h2>
+
   <a class="link-card" href="outputs/bus_stops_2025-07-15/bus_stops_report.pdf">
     <div class="title">📄 Full PDF Report</div>
     <div class="desc">Ranked stop analysis, satellite + street-view diagnostics, diurnal heat curves, and prioritized action list</div>
@@ -145,10 +242,49 @@
 
 <footer>
   Built for FortyGuard Hackathon '26 using live FortyGuard Temperature API data
-  and real Valley Metro GTFS transit data. See the README in the repository
-  for full methodology, including an honest account of a negative modeling
-  result and why we pivoted.
+  and real Valley Metro GTFS transit data.
 </footer>
+
+<script>
+  // Actual fitted coefficients from the trained model (final_model in the notebook).
+  const COEF = { impervious: 0.0087, vegetation: 0.0967, sky: -0.0579 };
+  const INTERCEPT = 45.585;
+
+  const impSlider = document.getElementById('imp');
+  const vegSlider = document.getElementById('veg');
+  const skySlider = document.getElementById('sky');
+  const impVal = document.getElementById('imp-val');
+  const vegVal = document.getElementById('veg-val');
+  const skyVal = document.getElementById('sky-val');
+  const predictionEl = document.getElementById('prediction');
+  const riskTagEl = document.getElementById('risk-tag');
+
+  function riskInfo(hi) {
+    if (hi < 27) return { label: 'Safe', color: '#2f9e44' };
+    if (hi < 32) return { label: 'Caution', color: '#f08c00' };
+    if (hi < 41) return { label: 'Extreme Caution', color: '#e8590c' };
+    return { label: 'Danger', color: '#c92a2a' };
+  }
+
+  function update() {
+    const imp = Number(impSlider.value);
+    const veg = Number(vegSlider.value);
+    const sky = Number(skySlider.value);
+
+    impVal.textContent = imp + '%';
+    vegVal.textContent = veg + '%';
+    skyVal.textContent = sky + '%';
+
+    const predicted = INTERCEPT + COEF.impervious * imp + COEF.vegetation * veg + COEF.sky * sky;
+    predictionEl.textContent = predicted.toFixed(2) + '°C';
+
+    const risk = riskInfo(predicted);
+    riskTagEl.innerHTML = `<span class="risk-tag" style="background:${risk.color}">${risk.label}</span>`;
+  }
+
+  [impSlider, vegSlider, skySlider].forEach(el => el.addEventListener('input', update));
+  update();
+</script>
 
 </body>
 </html>
