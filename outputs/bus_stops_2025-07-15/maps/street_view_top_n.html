@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_5e7c1e01311cb5925a89e94a3368968d {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_5e7c1e01311cb5925a89e94a3368968d" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_5e7c1e01311cb5925a89e94a3368968d = L.map(
+                "map_5e7c1e01311cb5925a89e94a3368968d",
+                {
+                    center: [33.40581866666667, -112.074368],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 15,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_2f36085eecd6996b236d90b0ddbec797 = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 20,
+  "maxNativeZoom": 20,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e",
+  "subdomains": "abcd",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_2f36085eecd6996b236d90b0ddbec797.addTo(map_5e7c1e01311cb5925a89e94a3368968d);
+        
+    
+            var marker_027d1ba95752b1c44ce2d27a3b33efe5 = L.marker(
+                [33.404289, -112.081862],
+                {
+}
+            ).addTo(map_5e7c1e01311cb5925a89e94a3368968d);
+        
+    
+            var icon_fec37b0297bb8e0ff28e4361552c706c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_e94e3de12b88518e744b45ad02bd1445 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7f3beea9e3ea62a7cea803269b9b2b5d = $(`<div id="html_7f3beea9e3ea62a7cea803269b9b2b5d" style="width: 100.0%; height: 100.0%;">#1 2609 — 7th Av & Tamarisk St<br>sky 43.5% · building 5.8%</div>`)[0];
+                popup_e94e3de12b88518e744b45ad02bd1445.setContent(html_7f3beea9e3ea62a7cea803269b9b2b5d);
+            
+        
+
+        marker_027d1ba95752b1c44ce2d27a3b33efe5.bindPopup(popup_e94e3de12b88518e744b45ad02bd1445)
+        ;
+
+        
+    
+    
+                marker_027d1ba95752b1c44ce2d27a3b33efe5.setIcon(icon_fec37b0297bb8e0ff28e4361552c706c);
+            
+    
+            var circle_6f28b3285901d955e3352abf8f802f91 = L.circle(
+                [33.404289, -112.081862],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.15, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 40.0, "stroke": true, "weight": 3}
+            ).addTo(map_5e7c1e01311cb5925a89e94a3368968d);
+        
+    
+        var popup_9e8887be1da7c091cb54e92797cd6a22 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7110058d538f6a9280f2b679f0a8cf63 = $(`<div id="html_7110058d538f6a9280f2b679f0a8cf63" style="width: 100.0%; height: 100.0%;">~80m tile</div>`)[0];
+                popup_9e8887be1da7c091cb54e92797cd6a22.setContent(html_7110058d538f6a9280f2b679f0a8cf63);
+            
+        
+
+        circle_6f28b3285901d955e3352abf8f802f91.bindPopup(popup_9e8887be1da7c091cb54e92797cd6a22)
+        ;
+
+        
+    
+    
+            var marker_58542fef0725c3b275c6522768357733 = L.marker(
+                [33.406549, -112.07265],
+                {
+}
+            ).addTo(map_5e7c1e01311cb5925a89e94a3368968d);
+        
+    
+            var icon_4904f0479afea9d28d9629608bc17e4f = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_6716908ec2a862878d2378c02a6d4ac1 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7bdd4d9988c268254a02995cd16e2266 = $(`<div id="html_7bdd4d9988c268254a02995cd16e2266" style="width: 100.0%; height: 100.0%;">#2 156 — Broadway Rd & Central Av<br>sky 7.2% · building 3.4%</div>`)[0];
+                popup_6716908ec2a862878d2378c02a6d4ac1.setContent(html_7bdd4d9988c268254a02995cd16e2266);
+            
+        
+
+        marker_58542fef0725c3b275c6522768357733.bindPopup(popup_6716908ec2a862878d2378c02a6d4ac1)
+        ;
+
+        
+    
+    
+                marker_58542fef0725c3b275c6522768357733.setIcon(icon_4904f0479afea9d28d9629608bc17e4f);
+            
+    
+            var circle_cc19ea5616a00bff61119d1273e272c5 = L.circle(
+                [33.406549, -112.07265],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.15, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 40.0, "stroke": true, "weight": 3}
+            ).addTo(map_5e7c1e01311cb5925a89e94a3368968d);
+        
+    
+        var popup_af3c3a7c05578e034ab394507c6d9d87 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f22851d6f0fd5b11dbf61011e09f8867 = $(`<div id="html_f22851d6f0fd5b11dbf61011e09f8867" style="width: 100.0%; height: 100.0%;">~80m tile</div>`)[0];
+                popup_af3c3a7c05578e034ab394507c6d9d87.setContent(html_f22851d6f0fd5b11dbf61011e09f8867);
+            
+        
+
+        circle_cc19ea5616a00bff61119d1273e272c5.bindPopup(popup_af3c3a7c05578e034ab394507c6d9d87)
+        ;
+
+        
+    
+    
+            var marker_aaa5046da9638197af288970818681fd = L.marker(
+                [33.406618, -112.068592],
+                {
+}
+            ).addTo(map_5e7c1e01311cb5925a89e94a3368968d);
+        
+    
+            var icon_8c049418ffd69eebf5283d38e3e51bc1 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_8f16ee2b2757d4bbed506e6200f34081 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7af217e489f08a46c424609665b109bc = $(`<div id="html_7af217e489f08a46c424609665b109bc" style="width: 100.0%; height: 100.0%;">#3 148 — Broadway Rd & 4th St<br>sky 44.9% · building 8.5%</div>`)[0];
+                popup_8f16ee2b2757d4bbed506e6200f34081.setContent(html_7af217e489f08a46c424609665b109bc);
+            
+        
+
+        marker_aaa5046da9638197af288970818681fd.bindPopup(popup_8f16ee2b2757d4bbed506e6200f34081)
+        ;
+
+        
+    
+    
+                marker_aaa5046da9638197af288970818681fd.setIcon(icon_8c049418ffd69eebf5283d38e3e51bc1);
+            
+    
+            var circle_92347e08ab9d750b238433bd653659a1 = L.circle(
+                [33.406618, -112.068592],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.15, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 40.0, "stroke": true, "weight": 3}
+            ).addTo(map_5e7c1e01311cb5925a89e94a3368968d);
+        
+    
+        var popup_c81d5098b9cd110df4a25993f64f969f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_01508f1cca7b71d82b1b8525cb2aa3a2 = $(`<div id="html_01508f1cca7b71d82b1b8525cb2aa3a2" style="width: 100.0%; height: 100.0%;">~80m tile</div>`)[0];
+                popup_c81d5098b9cd110df4a25993f64f969f.setContent(html_01508f1cca7b71d82b1b8525cb2aa3a2);
+            
+        
+
+        circle_92347e08ab9d750b238433bd653659a1.bindPopup(popup_c81d5098b9cd110df4a25993f64f969f)
+        ;
+
+        
+    
+    
+            tile_layer_2f36085eecd6996b236d90b0ddbec797.addTo(map_5e7c1e01311cb5925a89e94a3368968d);
+        
+    
+                marker_027d1ba95752b1c44ce2d27a3b33efe5.setIcon(icon_fec37b0297bb8e0ff28e4361552c706c);
+            
+    
+                marker_58542fef0725c3b275c6522768357733.setIcon(icon_4904f0479afea9d28d9629608bc17e4f);
+            
+    
+                marker_aaa5046da9638197af288970818681fd.setIcon(icon_8c049418ffd69eebf5283d38e3e51bc1);
+            
+</script>
+</html>

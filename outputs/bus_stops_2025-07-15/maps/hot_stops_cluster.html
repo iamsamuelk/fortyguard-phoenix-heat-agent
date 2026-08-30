@@ -1,0 +1,1077 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_5713bde75d9fa5666d6556be3c3ba91d {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+    
+                    <style>
+                        .foliumtooltip {
+                            
+                        }
+                       .foliumtooltip table{
+                            margin: auto;
+                        }
+                        .foliumtooltip tr{
+                            text-align: left;
+                        }
+                        .foliumtooltip th{
+                            padding: 2px; padding-right: 8px;
+                        }
+                    </style>
+            
+    
+                    <style>
+                        .foliumpopup {
+                            margin: auto;
+                        }
+                       .foliumpopup table{
+                            margin: auto;
+                        }
+                        .foliumpopup tr{
+                            text-align: left;
+                        }
+                        .foliumpopup th{
+                            padding: 2px; padding-right: 8px;
+                        }
+                    </style>
+            
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_5713bde75d9fa5666d6556be3c3ba91d" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_5713bde75d9fa5666d6556be3c3ba91d = L.map(
+                "map_5713bde75d9fa5666d6556be3c3ba91d",
+                {
+                    center: [33.402786675, -112.07268545],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 12,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_eac80fb9515bc397d5d736d11ed87f7c = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 20,
+  "maxNativeZoom": 20,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e",
+  "subdomains": "abcd",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_eac80fb9515bc397d5d736d11ed87f7c.addTo(map_5713bde75d9fa5666d6556be3c3ba91d);
+        
+    
+        function geo_json_1c6099dd8614deac6577c6be3e6b6f3b_styler(feature) {
+            switch(feature.id) {
+                case "1194": case "2593": case "2601": case "2605": case "2669": 
+                    return {"color": "#00000000", "fillColor": "#fff0ae", "fillOpacity": 0.55, "weight": 0};
+                case "1205": case "1209": case "3014": case "4016": 
+                    return {"color": "#00000000", "fillColor": "#fed38c", "fillOpacity": 0.55, "weight": 0};
+                case "3291": case "3355": case "4001": case "6523": 
+                    return {"color": "#00000000", "fillColor": "#e54f35", "fillOpacity": 0.55, "weight": 0};
+                case "3296": case "4006": 
+                    return {"color": "#00000000", "fillColor": "#f3854e", "fillOpacity": 0.55, "weight": 0};
+                case "3359": case "3773": case "3971": case "3977": case "3981": case "3991": case "3996": case "4049": case "4394": case "4740": case "5498": case "5843": case "6257": case "6533": 
+                    return {"color": "#00000000", "fillColor": "#d7191c", "fillOpacity": 0.55, "weight": 0};
+                default:
+                    return {"color": "#00000000", "fillColor": "#fdb56a", "fillOpacity": 0.55, "weight": 0};
+            }
+        }
+        function geo_json_1c6099dd8614deac6577c6be3e6b6f3b_highlighter(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "#222", "fillOpacity": 0.85, "weight": 1.6};
+            }
+        }
+
+        function geo_json_1c6099dd8614deac6577c6be3e6b6f3b_onEachFeature(feature, layer) {
+
+            layer.on({
+                mouseout: function(e) {
+                    if(typeof e.target.setStyle === "function"){
+                            geo_json_1c6099dd8614deac6577c6be3e6b6f3b.resetStyle(e.target);
+                    }
+                },
+                mouseover: function(e) {
+                    if(typeof e.target.setStyle === "function"){
+                        const highlightStyle = geo_json_1c6099dd8614deac6577c6be3e6b6f3b_highlighter(e.target.feature)
+                        e.target.setStyle(highlightStyle);
+                    }
+                },
+            });
+        };
+        var geo_json_1c6099dd8614deac6577c6be3e6b6f3b = L.geoJson(null, {
+                onEachFeature: geo_json_1c6099dd8614deac6577c6be3e6b6f3b_onEachFeature,
+            
+                style: geo_json_1c6099dd8614deac6577c6be3e6b6f3b_styler,
+            ...{
+}
+        });
+
+        function geo_json_1c6099dd8614deac6577c6be3e6b6f3b_add (data) {
+            geo_json_1c6099dd8614deac6577c6be3e6b6f3b
+                .addData(data);
+        }
+            geo_json_1c6099dd8614deac6577c6be3e6b6f3b_add({"features": [{"geometry": {"coordinates": [[[-112.09182908509636, 33.37699817893465], [-112.09096454897565, 33.37700578101399], [-112.09097359970409, 33.37773057659101], [-112.0918381429936, 33.37772297430353], [-112.09182908509636, 33.37699817893465]]], "type": "Polygon"}, "id": "1194", "properties": {"average_temperature": 36.7495, "centroid": "33.37736, -112.09140", "delta_from_mean": "+0.03 \u00b0C", "max_temperature": 40.1166, "min_temperature": 32.8604, "temperature": 40.12, "temperature_str": "40.12 \u00b0C", "tile_id": "T01194", "tile_rank": "3599 / 6713"}, "type": "Feature"}, {"geometry": {"coordinates": [[[-112.08231916996779, 33.377081470725365], [-112.08145463029258, 33.37708900658813], [-112.08146360216362, 33.37781380444384], [-112.08232814900774, 33.37780626837475], [-112.08231916996779, 33.377081470725365]]], "type": "Polygon"}, "id": "1205", "properties": {"average_temperature": 36.8574, "centroid": "33.37745, -112.08189", "delta_from_mean": "+0.06 \u00b0C", "max_temperature": 40.1488, "min_temperature": 33.0388, "temperature": 40.15, "temperature_str": "40.15 \u00b0C", "tile_id": "T01205", "tile_rank": "2925 / 6713"}, "type": "Feature"}, {"geometry": {"coordinates": [[[-112.07886100933842, 33.37711157805797], [-112.07799646837839, 33.37711908984175], [-112.07800541157368, 33.37784388852115], [-112.07886995970267, 33.37783637653169], [-112.07886100933842, 33.37711157805797]]], "type": "Polygon"}, "id": "1209", "properties": {"average_temperature": 36.834, "centroid": "33.37748, -112.07843", "delta_from_mean": "+0.05 \u00b0C", "max_temperature": 40.1421, "min_temperature": 33.0019, "temperature": 40.14, "temperature_str": "40.14 \u00b0C", "tile_id": "T01209", "tile_rank": "3081 / 6713"}, "type": "Feature"}, {"geometry": {"coordinates": [[[-112.08855158452359, 33.39152445862534], [-112.08768690368133, 33.39153204077636], [-112.08769593219492, 33.39225683544558], [-112.08856062021113, 33.39224925308701], [-112.08855158452359, 33.39152445862534]]], "type": "Polygon"}, "id": "2593", "properties": {"average_temperature": 36.7621, "centroid": "33.39189, -112.08812", "delta_from_mean": "+0.02 \u00b0C", "max_temperature": 40.1083, "min_temperature": 32.929, "temperature": 40.11, "temperature_str": "40.11 \u00b0C", "tile_id": "T02593", "tile_rank": "4108 / 6713"}, "type": "Feature"}, {"geometry": {"coordinates": [[[-112.08163412873891, 33.391584947189685], [-112.08076944531498, 33.39159248115667], [-112.08077841643647, 33.39231727748037], [-112.08164310703447, 33.39230974330715], [-112.08163412873891, 33.391584947189685]]], "type": "Polygon"}, "id": "2601", "properties": {"average_temperature": 36.7774, "centroid": "33.39195, -112.08121", "delta_from_mean": "+0.02 \u00b0C", "max_temperature": 40.1085, "min_temperature": 32.9751, "temperature": 40.11, "temperature_str": "40.11 \u00b0C", "tile_id": "T02601", "tile_rank": "4116 / 6713"}, "type": "Feature"}, {"geometry": {"coordinates": [[[-112.0781753931149, 33.391615046919355], [-112.07731070840629, 33.39162255679414], [-112.07731965083147, 33.392347353941126], [-112.07818434271417, 33.392339843860775], [-112.0781753931149, 33.391615046919355]]], "type": "Polygon"}, "id": "2605", "properties": {"average_temperature": 36.7642, "centroid": "33.39198, -112.07775", "delta_from_mean": "+0.02 \u00b0C", "max_temperature": 40.1071, "min_temperature": 32.9403, "temperature": 40.11, "temperature_str": "40.11 \u00b0C", "tile_id": "T02605", "tile_rank": "4120 / 6713"}, "type": "Feature"}, {"geometry": {"coordinates": [[[-112.08250779731063, 33.39230220311074], [-112.08164310703447, 33.39230974330715], [-112.08165208565134, 33.39303453933769], [-112.0825167831018, 33.39302699893488], [-112.08250779731063, 33.39230220311074]]], "type": "Polygon"}, "id": "2669", "properties": {"average_temperature": 36.7738, "centroid": "33.39267, -112.08208", "delta_from_mean": "+0.01 \u00b0C", "max_temperature": 40.1049, "min_temperature": 32.9785, "temperature": 40.1, "temperature_str": "40.10 \u00b0C", "tile_id": "T02669", "tile_rank": "4295 / 6713"}, "type": "Feature"}, {"geometry": {"coordinates": [[[-112.08255272948266, 33.395926181362164], [-112.08168800333246, 33.395933722590605], [-112.0816969835562, 33.39665851818653], [-112.08256171688197, 33.39665097675165], [-112.08255272948266, 33.395926181362164]]], "type": "Polygon"}, "id": "3014", "properties": {"average_temperature": 36.8232, "centroid": "33.39629, -112.08212", "delta_from_mean": "+0.05 \u00b0C", "max_temperature": 40.14, "min_temperature": 32.9902, "temperature": 40.14, "temperature_str": "40.14 \u00b0C", "tile_id": "T03014", "tile_rank": "3149 / 6713"}, "type": "Feature"}, {"geometry": {"coordinates": [[[-112.08172392615586, 33.39883290445269], [-112.08085917097986, 33.398840440482154], [-112.08086814531266, 33.39956523593662], [-112.08173290766527, 33.399557699700885], [-112.08172392615586, 33.39883290445269]]], "type": "Polygon"}, "id": "3291", "properties": {"average_temperature": 36.9751, "centroid": "33.39920, -112.08130", "delta_from_mean": "+0.16 \u00b0C", "max_temperature": 40.2503, "min_temperature": 33.0203, "temperature": 40.25, "temperature_str": "40.25 \u00b0C", "tile_id": "T03291", "tile_rank": "1406 / 6713"}, "type": "Feature"}, {"geometry": {"coordinates": [[[-112.07740014706184, 33.39887052435308], [-112.0765353902801, 33.39887803025902], [-112.07654432872965, 33.39960282674234], [-112.07740909268806, 33.399595320630944], [-112.07740014706184, 33.39887052435308]]], "type": "Polygon"}, "id": "3296", "properties": {"average_temperature": 36.9367, "centroid": "33.39924, -112.07697", "delta_from_mean": "+0.14 \u00b0C", "max_temperature": 40.2265, "min_temperature": 33.0143, "temperature": 40.23, "temperature_str": "40.23 \u00b0C", "tile_id": "T03296", "tile_rank": "1532 / 6713"}, "type": "Feature"}, {"geometry": {"coordinates": [[[-112.08605671459424, 33.39951992814971], [-112.08519195385384, 33.399527494509584], [-112.08520096439209, 33.40025228884412], [-112.08606573230931, 33.40024472227716], [-112.08605671459424, 33.39951992814971]]], "type": "Polygon"}, "id": "3355", "properties": {"average_temperature": 36.9999, "centroid": "33.39989, -112.08563", "delta_from_mean": "+0.17 \u00b0C", "max_temperature": 40.262, "min_temperature": 33.045, "temperature": 40.26, "temperature_str": "40.26 \u00b0C", "tile_id": "T03355", "tile_rank": "1277 / 6713"}, "type": "Feature"}, {"geometry": {"coordinates": [[[-112.08259766969596, 33.3995501574403], [-112.08173290766527, 33.399557699700885], [-112.08174188949614, 33.40028249486215], [-112.08260665870368, 33.40027495239513], [-112.08259766969596, 33.3995501574403]]], "type": "Polygon"}, "id": "3359", "properties": {"average_temperature": 37.0145, "centroid": "33.39992, -112.08217", "delta_from_mean": "+0.19 \u00b0C", "max_temperature": 40.2761, "min_temperature": 33.0347, "temperature": 40.28, "temperature_str": "40.28 \u00b0C", "tile_id": "T03359", "tile_rank": "361 / 6713"}, "type": "Feature"}, {"geometry": {"coordinates": [[[-112.08265160856824, 33.403898925865185], [-112.08178680347253, 33.403906469364415], [-112.0817957872323, 33.40463126400405], [-112.08266059950643, 33.40462372029836], [-112.08265160856824, 33.403898925865185]]], "type": "Polygon"}, "id": "3773", "properties": {"average_temperature": 37.0748, "centroid": "33.40427, -112.08222", "delta_from_mean": "+0.22 \u00b0C", "max_temperature": 40.3094, "min_temperature": 33.0781, "temperature": 40.31, "temperature_str": "40.31 \u00b0C", "tile_id": "T03773", "tile_rank": "38 / 6713"}, "type": "Feature"}, {"geometry": {"coordinates": [[[-112.09046200749974, 33.40600514065288], [-112.08959718377787, 33.406012739008105], [-112.08960623311442, 33.406737531522815], [-112.09047106401539, 33.40672993295964], [-112.09046200749974, 33.40600514065288]]], "type": "Polygon"}, "id": "3971", "properties": {"average_temperature": 36.9776, "centroid": "33.40637, -112.09003", "delta_from_mean": "+0.19 \u00b0C", "max_temperature": 40.2765, "min_temperature": 33.0066, "temperature": 40.28, "temperature_str": "40.28 \u00b0C", "tile_id": "T03971", "tile_rank": "400 / 6713"}, "type": "Feature"}, {"geometry": {"coordinates": [[[-112.0852730603085, 33.40605064039018], [-112.08440823464441, 33.40605820258772], [-112.08441724090629, 33.40678299634666], [-112.0852820737495, 33.40677543394215], [-112.0852730603085, 33.40605064039018]]], "type": "Polygon"}, "id": "3977", "properties": {"average_temperature": 37.0447, "centroid": "33.40642, -112.08485", "delta_from_mean": "+0.19 \u00b0C", "max_temperature": 40.2834, "min_temperature": 33.0854, "temperature": 40.28, "temperature_str": "40.28 \u00b0C", "tile_id": "T03977", "tile_rank": "406 / 6713"}, "type": "Feature"}, {"geometry": {"coordinates": [[[-112.08181375571642, 33.40608085302251], [-112.08094892876268, 33.40608839111479], [-112.08095790630787, 33.40681318569992], [-112.0818227404408, 33.406805647401335], [-112.08181375571642, 33.40608085302251]]], "type": "Polygon"}, "id": "3981", "properties": {"average_temperature": 37.0403, "centroid": "33.40645, -112.08139", "delta_from_mean": "+0.19 \u00b0C", "max_temperature": 40.2816, "min_temperature": 33.0844, "temperature": 40.28, "temperature_str": "40.28 \u00b0C", "tile_id": "T03981", "tile_rank": "410 / 6713"}, "type": "Feature"}, {"geometry": {"coordinates": [[[-112.0731654717303, 33.40615596275933], [-112.07230064157044, 33.406163440587925], [-112.07230954732317, 33.40688823722698], [-112.07317438466232, 33.40688075919374], [-112.0731654717303, 33.40615596275933]]], "type": "Polygon"}, "id": "3991", "properties": {"average_temperature": 37.004, "centroid": "33.40652, -112.07274", "delta_from_mean": "+0.20 \u00b0C", "max_temperature": 40.2864, "min_temperature": 33.0133, "temperature": 40.29, "temperature_str": "40.29 \u00b0C", "tile_id": "T03991", "tile_rank": "177 / 6713"}, "type": "Feature"}, {"geometry": {"coordinates": [[[-112.06884131774157, 33.4061932916381], [-112.0679764859883, 33.40620073933456], [-112.06798535584439, 33.4069255369944], [-112.06885019477701, 33.406918089094106], [-112.06884131774157, 33.4061932916381]]], "type": "Polygon"}, "id": "3996", "properties": {"average_temperature": 37.0064, "centroid": "33.40656, -112.06841", "delta_from_mean": "+0.20 \u00b0C", "max_temperature": 40.2863, "min_temperature": 33.0165, "temperature": 40.29, "temperature_str": "40.29 \u00b0C", "tile_id": "T03996", "tile_rank": "182 / 6713"}, "type": "Feature"}, {"geometry": {"coordinates": [[[-112.06451715579861, 33.40623046985586], [-112.06365232245834, 33.40623788742001], [-112.06366115641752, 33.4069626860965], [-112.0645259969372, 33.406955268329355], [-112.06451715579861, 33.40623046985586]]], "type": "Polygon"}, "id": "4001", "properties": {"average_temperature": 37.0172, "centroid": "33.40660, -112.06409", "delta_from_mean": "+0.17 \u00b0C", "max_temperature": 40.2618, "min_temperature": 33.1086, "temperature": 40.26, "temperature_str": "40.26 \u00b0C", "tile_id": "T04001", "tile_rank": "1295 / 6713"}, "type": "Feature"}, {"geometry": {"coordinates": [[[-112.06019298593357, 33.40626749741168], [-112.05932815101274, 33.40627488484332], [-112.05933694907476, 33.406999684532366], [-112.06020179117505, 33.406992296898544], [-112.06019298593357, 33.40626749741168]]], "type": "Polygon"}, "id": "4006", "properties": {"average_temperature": 37.0302, "centroid": "33.40663, -112.05976", "delta_from_mean": "+0.12 \u00b0C", "max_temperature": 40.2148, "min_temperature": 33.274, "temperature": 40.21, "temperature_str": "40.21 \u00b0C", "tile_id": "T04006", "tile_rank": "1651 / 6713"}, "type": "Feature"}, {"geometry": {"coordinates": [[[-112.05586880817859, 33.40630437430464], [-112.05500397168363, 33.4063117316036], [-112.05501273384822, 33.407036532301056], [-112.05587757752268, 33.40702917480074], [-112.05586880817859, 33.40630437430464]]], "type": "Polygon"}, "id": "4011", "properties": {"average_temperature": 37.0402, "centroid": "33.40667, -112.05544", "delta_from_mean": "+0.08 \u00b0C", "max_temperature": 40.1725, "min_temperature": 33.421, "temperature": 40.17, "temperature_str": "40.17 \u00b0C", "tile_id": "T04011", "tile_rank": "2068 / 6713"}, "type": "Feature"}, {"geometry": {"coordinates": [[[-112.05154462256584, 33.40634110053382], [-112.05067978450319, 33.40634842769992], [-112.05068851077009, 33.40707322940167], [-112.05155335601229, 33.407065902035036], [-112.05154462256584, 33.40634110053382]]], "type": "Polygon"}, "id": "4016", "properties": {"average_temperature": 37.044, "centroid": "33.40671, -112.05112", "delta_from_mean": "+0.07 \u00b0C", "max_temperature": 40.1585, "min_temperature": 33.4709, "temperature": 40.16, "temperature_str": "40.16 \u00b0C", "tile_id": "T04016", "tile_rank": "2597 / 6713"}, "type": "Feature"}, {"geometry": {"coordinates": [[[-112.04722042912749, 33.406377676098295], [-112.04635558950356, 33.406384973131345], [-112.0463642798725, 33.407109775833256], [-112.04722912667603, 33.4071024786005], [-112.04722042912749, 33.406377676098295]]], "type": "Polygon"}, "id": "4021", "properties": {"average_temperature": 37.0437, "centroid": "33.40674, -112.04679", "delta_from_mean": "+0.08 \u00b0C", "max_temperature": 40.1651, "min_temperature": 33.4511, "temperature": 40.17, "temperature_str": "40.17 \u00b0C", "tile_id": "T04021", "tile_rank": "2070 / 6713"}, "type": "Feature"}, {"geometry": {"coordinates": [[[-112.04289622789567, 33.406414100997154], [-112.04203138671691, 33.406421367896975], [-112.04204004118763, 33.407146171594945], [-112.04290488954604, 33.40713890449624], [-112.04289622789567, 33.406414100997154]]], "type": "Polygon"}, "id": "4026", "properties": {"average_temperature": 37.0429, "centroid": "33.40678, -112.04247", "delta_from_mean": "+0.08 \u00b0C", "max_temperature": 40.1737, "min_temperature": 33.4243, "temperature": 40.17, "temperature_str": "40.17 \u00b0C", "tile_id": "T04026", "tile_rank": "2075 / 6713"}, "type": "Feature"}, {"geometry": {"coordinates": [[[-112.03943686132052, 33.406443132436394], [-112.03857201890254, 33.4064503752295], [-112.03858064465447, 33.407175179721335], [-112.03944549425218, 33.407167936730005], [-112.03943686132052, 33.406443132436394]]], "type": "Polygon"}, "id": "4030", "properties": {"average_temperature": 37.0432, "centroid": "33.40681, -112.03901", "delta_from_mean": "+0.09 \u00b0C", "max_temperature": 40.1751, "min_temperature": 33.4211, "temperature": 40.18, "temperature_str": "40.18 \u00b0C", "tile_id": "T04030", "tile_rank": "1866 / 6713"}, "type": "Feature"}, {"geometry": {"coordinates": [[[-112.08268757425166, 33.406798103076255], [-112.0818227404408, 33.406805647401335], [-112.08183172548672, 33.40753044169322], [-112.08269656647704, 33.40752289716167], [-112.08268757425166, 33.406798103076255]]], "type": "Polygon"}, "id": "4049", "properties": {"average_temperature": 37.0364, "centroid": "33.40716, -112.08226", "delta_from_mean": "+0.19 \u00b0C", "max_temperature": 40.2763, "min_temperature": 33.0891, "temperature": 40.28, "temperature_str": "40.28 \u00b0C", "tile_id": "T04049", "tile_rank": "430 / 6713"}, "type": "Feature"}, {"geometry": {"coordinates": [[[-112.08273253859683, 33.41042207263381], [-112.08186766888622, 33.41042961799126], [-112.08187665554009, 33.41115441184841], [-112.0827415324314, 33.41114686628447], [-112.08273253859683, 33.41042207263381]]], "type": "Polygon"}, "id": "4394", "properties": {"average_temperature": 37.0355, "centroid": "33.41079, -112.08230", "delta_from_mean": "+0.19 \u00b0C", "max_temperature": 40.2765, "min_temperature": 33.0892, "temperature": 40.28, "temperature_str": "40.28 \u00b0C", "tile_id": "T04394", "tile_rank": "482 / 6713"}, "type": "Feature"}, {"geometry": {"coordinates": [[[-112.08191260537187, 33.414053586407505], [-112.08104769943296, 33.414061126769276], [-112.08105668051303, 33.414785920397996], [-112.08192159363395, 33.41477837982988], [-112.08191260537187, 33.414053586407505]]], "type": "Polygon"}, "id": "4740", "properties": {"average_temperature": 37.0424, "centroid": "33.41442, -112.08148", "delta_from_mean": "+0.19 \u00b0C", "max_temperature": 40.281, "min_temperature": 33.085, "temperature": 40.28, "temperature_str": "40.28 \u00b0C", "tile_id": "T04740", "tile_rank": "584 / 6713"}, "type": "Feature"}, {"geometry": {"coordinates": [[[-112.04825071155761, 33.42014160193695], [-112.04738573578904, 33.420148908794694], [-112.04739443925371, 33.42087370964733], [-112.04825942220678, 33.420866402589645], [-112.04825071155761, 33.42014160193695]]], "type": "Polygon"}, "id": "5331", "properties": {"average_temperature": 37.0396, "centroid": "33.42051, -112.04782", "delta_from_mean": "+0.08 \u00b0C", "max_temperature": 40.1686, "min_temperature": 33.4276, "temperature": 40.17, "temperature_str": "40.17 \u00b0C", "tile_id": "T05331", "tile_rank": "2313 / 6713"}, "type": "Feature"}, {"geometry": {"coordinates": [[[-112.08287647858157, 33.42201876060956], [-112.08201149394867, 33.422026309271196], [-112.08202048574977, 33.42275110173703], [-112.0828854775675, 33.422743552868866], [-112.08287647858157, 33.42201876060956]]], "type": "Polygon"}, "id": "5498", "properties": {"average_temperature": 37.016, "centroid": "33.42238, -112.08245", "delta_from_mean": "+0.20 \u00b0C", "max_temperature": 40.2911, "min_temperature": 33.0385, "temperature": 40.29, "temperature_str": "40.29 \u00b0C", "tile_id": "T05498", "tile_rank": "315 / 6713"}, "type": "Feature"}, {"geometry": {"coordinates": [[[-112.08292147673184, 33.425642721036404], [-112.08205645617223, 33.425650270730756], [-112.0820654495824, 33.42637506276176], [-112.08293047732813, 33.42636751286086], [-112.08292147673184, 33.425642721036404]]], "type": "Polygon"}, "id": "5843", "properties": {"average_temperature": 37.0, "centroid": "33.42601, -112.08249", "delta_from_mean": "+0.20 \u00b0C", "max_temperature": 40.2864, "min_temperature": 32.8617, "temperature": 40.29, "temperature_str": "40.29 \u00b0C", "tile_id": "T05843", "tile_rank": "354 / 6713"}, "type": "Feature"}, {"geometry": {"coordinates": [[[-112.08297548514142, 33.42999147067853], [-112.08211042146125, 33.429999021612254], [-112.0821194168027, 33.430723813121425], [-112.0829844876705, 33.430716261981104], [-112.08297548514142, 33.42999147067853]]], "type": "Polygon"}, "id": "6257", "properties": {"average_temperature": 36.995, "centroid": "33.43036, -112.08255", "delta_from_mean": "+0.19 \u00b0C", "max_temperature": 40.2797, "min_temperature": 32.7314, "temperature": 40.28, "temperature_str": "40.28 \u00b0C", "tile_id": "T06257", "tile_rank": "887 / 6713"}, "type": "Feature"}, {"geometry": {"coordinates": [[[-112.09166240372375, 33.432814785984405], [-112.09079731452988, 33.43282239806837], [-112.09080638304539, 33.4335471871563], [-112.09167147942782, 33.43353957486411], [-112.09166240372375, 33.432814785984405]]], "type": "Polygon"}, "id": "6523", "properties": {"average_temperature": 36.9988, "centroid": "33.43318, -112.09123", "delta_from_mean": "+0.18 \u00b0C", "max_temperature": 40.2651, "min_temperature": 32.8105, "temperature": 40.27, "temperature_str": "40.27 \u00b0C", "tile_id": "T06523", "tile_rank": "1245 / 6713"}, "type": "Feature"}, {"geometry": {"coordinates": [[[-112.08301149719084, 33.43289063536704], [-112.08214640475852, 33.43289818712711], [-112.08215540138768, 33.43362297828837], [-112.08302050100868, 33.43361542632172], [-112.08301149719084, 33.43289063536704]]], "type": "Polygon"}, "id": "6533", "properties": {"average_temperature": 36.9979, "centroid": "33.43326, -112.08258", "delta_from_mean": "+0.19 \u00b0C", "max_temperature": 40.283, "min_temperature": 32.7709, "temperature": 40.28, "temperature_str": "40.28 \u00b0C", "tile_id": "T06533", "tile_rank": "922 / 6713"}, "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+    geo_json_1c6099dd8614deac6577c6be3e6b6f3b.bindTooltip(
+    function(layer){
+    let div = L.DomUtil.create('div');
+    
+    let handleObject = feature => {
+        if (feature === null) {
+            return '';
+        } else if (typeof(feature)=='object') {
+            return JSON.stringify(feature);
+        } else {
+            return feature;
+        }
+    }
+    let fields = ["temperature_str", "tile_rank"];
+    let aliases = ["Temperature", "Rank"];
+    let table = '<table>' +
+        String(
+        fields.map(
+        (v,i)=>
+        `<tr>
+            <th>${aliases[i]}</th>
+            
+            <td>${handleObject(layer.feature.properties[v])}</td>
+        </tr>`).join(''))
+    +'</table>';
+    div.innerHTML=table;
+    
+    return div
+    }
+    ,{
+  "sticky": true,
+  "className": "foliumtooltip",
+});
+                     
+    
+    geo_json_1c6099dd8614deac6577c6be3e6b6f3b.bindPopup(
+    function(layer){
+    let div = L.DomUtil.create('div');
+    
+    let handleObject = feature => {
+        if (feature === null) {
+            return '';
+        } else if (typeof(feature)=='object') {
+            return JSON.stringify(feature);
+        } else {
+            return feature;
+        }
+    }
+    let fields = ["tile_id", "tile_rank", "temperature_str", "delta_from_mean", "centroid"];
+    let aliases = ["Tile", "Rank (hottest)", "Temperature", "\u0394 vs AOI mean", "Centroid (lat, lon)"];
+    let table = '<table>' +
+        String(
+        fields.map(
+        (v,i)=>
+        `<tr>
+            <th>${aliases[i].toLocaleString()}</th>
+            
+            <td>${handleObject(layer.feature.properties[v]).toLocaleString()}</td>
+        </tr>`).join(''))
+    +'</table>';
+    div.innerHTML=table;
+    
+    return div
+    }
+    ,{
+  "className": "foliumpopup",
+});
+                     
+    
+            geo_json_1c6099dd8614deac6577c6be3e6b6f3b.addTo(map_5713bde75d9fa5666d6556be3c3ba91d);
+        
+    
+            var circle_marker_d9c95d7e186a1c42ea48a20b6f41b73c = L.circleMarker(
+                [33.404289, -112.081862],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#d7191c", "fillOpacity": 0.95, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 1}
+            ).addTo(map_5713bde75d9fa5666d6556be3c3ba91d);
+        
+    
+        var popup_7c11a1e04a2551818941c01a08c9e693 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_47d7833b370c5e4b497f2d8bf11ea146 = $(`<div id="html_47d7833b370c5e4b497f2d8bf11ea146" style="width: 100.0%; height: 100.0%;">#1  2609 — 7th Av & Tamarisk St<br/>40.3 °C</div>`)[0];
+                popup_7c11a1e04a2551818941c01a08c9e693.setContent(html_47d7833b370c5e4b497f2d8bf11ea146);
+            
+        
+
+        circle_marker_d9c95d7e186a1c42ea48a20b6f41b73c.bindPopup(popup_7c11a1e04a2551818941c01a08c9e693)
+        ;
+
+        
+    
+    
+            var circle_marker_7b500a31e2a3509b031e11ab2de813e6 = L.circleMarker(
+                [33.406549, -112.07265],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#d7191c", "fillOpacity": 0.95, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 1}
+            ).addTo(map_5713bde75d9fa5666d6556be3c3ba91d);
+        
+    
+        var popup_8935b0e234880cb5117d3a2ec5dbdb6d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_74ef82021b5be6d398b3589923fdd72a = $(`<div id="html_74ef82021b5be6d398b3589923fdd72a" style="width: 100.0%; height: 100.0%;">#2  156 — Broadway Rd & Central Av<br/>40.3 °C</div>`)[0];
+                popup_8935b0e234880cb5117d3a2ec5dbdb6d.setContent(html_74ef82021b5be6d398b3589923fdd72a);
+            
+        
+
+        circle_marker_7b500a31e2a3509b031e11ab2de813e6.bindPopup(popup_8935b0e234880cb5117d3a2ec5dbdb6d)
+        ;
+
+        
+    
+    
+            var circle_marker_4642e52c44a9ee72dff9a972e37e8ddb = L.circleMarker(
+                [33.406618, -112.068592],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#d7191c", "fillOpacity": 0.95, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 1}
+            ).addTo(map_5713bde75d9fa5666d6556be3c3ba91d);
+        
+    
+        var popup_cad9712bff710fe573df248d40aab1bd = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_9ad8c0a8aa03623a5e5d4ee407dec8d5 = $(`<div id="html_9ad8c0a8aa03623a5e5d4ee407dec8d5" style="width: 100.0%; height: 100.0%;">#3  148 — Broadway Rd & 4th St<br/>40.3 °C</div>`)[0];
+                popup_cad9712bff710fe573df248d40aab1bd.setContent(html_9ad8c0a8aa03623a5e5d4ee407dec8d5);
+            
+        
+
+        circle_marker_4642e52c44a9ee72dff9a972e37e8ddb.bindPopup(popup_cad9712bff710fe573df248d40aab1bd)
+        ;
+
+        
+    
+    
+            var circle_marker_6700b92c552f1f60aad7bee525e909ac = L.circleMarker(
+                [33.426291, -112.082311],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#d7191c", "fillOpacity": 0.95, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 1}
+            ).addTo(map_5713bde75d9fa5666d6556be3c3ba91d);
+        
+    
+        var popup_8b4a1fcdf650726cce2ec9d5ee34903b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4e66861197013de797de190bb074b063 = $(`<div id="html_4e66861197013de797de190bb074b063" style="width: 100.0%; height: 100.0%;">#4  2607 — 7th Av & Watkins St<br/>40.3 °C</div>`)[0];
+                popup_8b4a1fcdf650726cce2ec9d5ee34903b.setContent(html_4e66861197013de797de190bb074b063);
+            
+        
+
+        circle_marker_6700b92c552f1f60aad7bee525e909ac.bindPopup(popup_8b4a1fcdf650726cce2ec9d5ee34903b)
+        ;
+
+        
+    
+    
+            var circle_marker_5ad1b6dee76b89f8247e4f18cf697b04 = L.circleMarker(
+                [33.422433, -112.082281],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#d7191c", "fillOpacity": 0.95, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 1}
+            ).addTo(map_5713bde75d9fa5666d6556be3c3ba91d);
+        
+    
+        var popup_85e7bef5b66c7ce89df6dc9306ab3dac = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e23303e30fe3d3bc0b2d903fc47e94bf = $(`<div id="html_e23303e30fe3d3bc0b2d903fc47e94bf" style="width: 100.0%; height: 100.0%;">#5  2591 — 7th Av & Lower Buckeye Rd<br/>40.3 °C</div>`)[0];
+                popup_85e7bef5b66c7ce89df6dc9306ab3dac.setContent(html_e23303e30fe3d3bc0b2d903fc47e94bf);
+            
+        
+
+        circle_marker_5ad1b6dee76b89f8247e4f18cf697b04.bindPopup(popup_85e7bef5b66c7ce89df6dc9306ab3dac)
+        ;
+
+        
+    
+    
+            var circle_marker_c623ce71d051ed9ada860bf89b573506 = L.circleMarker(
+                [33.406605, -112.081415],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#d7191c", "fillOpacity": 0.95, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 1}
+            ).addTo(map_5713bde75d9fa5666d6556be3c3ba91d);
+        
+    
+        var popup_5486ebe992a96478cdb2231fe2560c76 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c7ce04d86c43753283281b1a9ea52eae = $(`<div id="html_c7ce04d86c43753283281b1a9ea52eae" style="width: 100.0%; height: 100.0%;">#6  1089 — Broadway Rd & 7th Av<br/>40.3 °C</div>`)[0];
+                popup_5486ebe992a96478cdb2231fe2560c76.setContent(html_c7ce04d86c43753283281b1a9ea52eae);
+            
+        
+
+        circle_marker_c623ce71d051ed9ada860bf89b573506.bindPopup(popup_5486ebe992a96478cdb2231fe2560c76)
+        ;
+
+        
+    
+    
+            var circle_marker_fb86a95c445502652e71b3bf05b3e3e6 = L.circleMarker(
+                [33.433529, -112.082375],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#d7191c", "fillOpacity": 0.95, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 1}
+            ).addTo(map_5713bde75d9fa5666d6556be3c3ba91d);
+        
+    
+        var popup_88caca8d35ea44e9f3047d0f50659557 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_96ca46efbfb5ed9951b1c54178d4c93e = $(`<div id="html_96ca46efbfb5ed9951b1c54178d4c93e" style="width: 100.0%; height: 100.0%;">#7  2599 — 7th Av & Pima St<br/>40.3 °C</div>`)[0];
+                popup_88caca8d35ea44e9f3047d0f50659557.setContent(html_96ca46efbfb5ed9951b1c54178d4c93e);
+            
+        
+
+        circle_marker_fb86a95c445502652e71b3bf05b3e3e6.bindPopup(popup_88caca8d35ea44e9f3047d0f50659557)
+        ;
+
+        
+    
+    
+            var circle_marker_0054cc3c5d05f213477ef3f67087d66e = L.circleMarker(
+                [33.411141, -112.081883],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#d7191c", "fillOpacity": 0.95, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 1}
+            ).addTo(map_5713bde75d9fa5666d6556be3c3ba91d);
+        
+    
+        var popup_23c2597af9bb4657f836431b5bc39c26 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_3959174c54f2c8238153948a49b351f2 = $(`<div id="html_3959174c54f2c8238153948a49b351f2" style="width: 100.0%; height: 100.0%;">#8  2590 — 7th Av & Jones Av<br/>40.3 °C</div>`)[0];
+                popup_23c2597af9bb4657f836431b5bc39c26.setContent(html_3959174c54f2c8238153948a49b351f2);
+            
+        
+
+        circle_marker_0054cc3c5d05f213477ef3f67087d66e.bindPopup(popup_23c2597af9bb4657f836431b5bc39c26)
+        ;
+
+        
+    
+    
+            var circle_marker_7468de1397968fb6e45a739ebd5f1562 = L.circleMarker(
+                [33.414359, -112.081907],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#d7191c", "fillOpacity": 0.95, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 1}
+            ).addTo(map_5713bde75d9fa5666d6556be3c3ba91d);
+        
+    
+        var popup_d9266d1b498481fb849e5c424f326bf9 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c4ce9215a0ce95b2ed4117c3aa54bc36 = $(`<div id="html_c4ce9215a0ce95b2ed4117c3aa54bc36" style="width: 100.0%; height: 100.0%;">#9  2582 — 7th Av & Elwood St<br/>40.3 °C</div>`)[0];
+                popup_d9266d1b498481fb849e5c424f326bf9.setContent(html_c4ce9215a0ce95b2ed4117c3aa54bc36);
+            
+        
+
+        circle_marker_7468de1397968fb6e45a739ebd5f1562.bindPopup(popup_d9266d1b498481fb849e5c424f326bf9)
+        ;
+
+        
+    
+    
+            var circle_marker_7dd3fb88d5a6bbd5eaf2c67af7a1cde5 = L.circleMarker(
+                [33.407205, -112.081871],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#d7191c", "fillOpacity": 0.95, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 1}
+            ).addTo(map_5713bde75d9fa5666d6556be3c3ba91d);
+        
+    
+        var popup_82e13900da7851ff2db36036df11d03d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_69789d3686efc9214b3a505d696a8565 = $(`<div id="html_69789d3686efc9214b3a505d696a8565" style="width: 100.0%; height: 100.0%;">#10  2575 — 7th Av & Broadway Rd<br/>40.3 °C</div>`)[0];
+                popup_82e13900da7851ff2db36036df11d03d.setContent(html_69789d3686efc9214b3a505d696a8565);
+            
+        
+
+        circle_marker_7dd3fb88d5a6bbd5eaf2c67af7a1cde5.bindPopup(popup_82e13900da7851ff2db36036df11d03d)
+        ;
+
+        
+    
+    
+            var circle_marker_5c2f6884185964627e48e760590dd963 = L.circleMarker(
+                [33.430353, -112.082349],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#d7191c", "fillOpacity": 0.95, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 1}
+            ).addTo(map_5713bde75d9fa5666d6556be3c3ba91d);
+        
+    
+        var popup_912cb12d6003674c3a10861a9331f9e9 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5cb195c497c200fe6419663b6dcb83a6 = $(`<div id="html_5cb195c497c200fe6419663b6dcb83a6" style="width: 100.0%; height: 100.0%;">#11  2573 — 7th Av & Apache St<br/>40.3 °C</div>`)[0];
+                popup_912cb12d6003674c3a10861a9331f9e9.setContent(html_5cb195c497c200fe6419663b6dcb83a6);
+            
+        
+
+        circle_marker_5c2f6884185964627e48e760590dd963.bindPopup(popup_912cb12d6003674c3a10861a9331f9e9)
+        ;
+
+        
+    
+    
+            var circle_marker_920f53d255038e7a3930ce20d5fdd19b = L.circleMarker(
+                [33.399665, -112.081843],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#d7191c", "fillOpacity": 0.95, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 1}
+            ).addTo(map_5713bde75d9fa5666d6556be3c3ba91d);
+        
+    
+        var popup_6312e0d6108992d7d2524f43f32e005c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_9eeb9d32452bc5d429e1238b1091a8a5 = $(`<div id="html_9eeb9d32452bc5d429e1238b1091a8a5" style="width: 100.0%; height: 100.0%;">#12  2600 — 7th Av & Roeser Rd<br/>40.3 °C</div>`)[0];
+                popup_6312e0d6108992d7d2524f43f32e005c.setContent(html_9eeb9d32452bc5d429e1238b1091a8a5);
+            
+        
+
+        circle_marker_920f53d255038e7a3930ce20d5fdd19b.bindPopup(popup_6312e0d6108992d7d2524f43f32e005c)
+        ;
+
+        
+    
+    
+            var circle_marker_273f91689faf3ef050a42fb5db63e608 = L.circleMarker(
+                [33.406636, -112.090158],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#d7191c", "fillOpacity": 0.95, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 1}
+            ).addTo(map_5713bde75d9fa5666d6556be3c3ba91d);
+        
+    
+        var popup_5c410189b9a74dc1da02e92b34bebdae = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e76dfe88ac29eeeaf2a2bfdce501c8a3 = $(`<div id="html_e76dfe88ac29eeeaf2a2bfdce501c8a3" style="width: 100.0%; height: 100.0%;">#13  1087 — Broadway Rd & 15th Av<br/>40.3 °C</div>`)[0];
+                popup_5c410189b9a74dc1da02e92b34bebdae.setContent(html_e76dfe88ac29eeeaf2a2bfdce501c8a3);
+            
+        
+
+        circle_marker_273f91689faf3ef050a42fb5db63e608.bindPopup(popup_5c410189b9a74dc1da02e92b34bebdae)
+        ;
+
+        
+    
+    
+            var circle_marker_15835e308c0f9c701658e1c120a891ae = L.circleMarker(
+                [33.406617, -112.085198],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#d7191c", "fillOpacity": 0.95, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 1}
+            ).addTo(map_5713bde75d9fa5666d6556be3c3ba91d);
+        
+    
+        var popup_dd6bd73b2dd4071c8549e5016cd4a39d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5ee7c06eaa3fcc5a10b6dcbbbaee29bc = $(`<div id="html_5ee7c06eaa3fcc5a10b6dcbbbaee29bc" style="width: 100.0%; height: 100.0%;">#14  1112 — Broadway Rd & 9th Av<br/>40.3 °C</div>`)[0];
+                popup_dd6bd73b2dd4071c8549e5016cd4a39d.setContent(html_5ee7c06eaa3fcc5a10b6dcbbbaee29bc);
+            
+        
+
+        circle_marker_15835e308c0f9c701658e1c120a891ae.bindPopup(popup_dd6bd73b2dd4071c8549e5016cd4a39d)
+        ;
+
+        
+    
+    
+            var circle_marker_c37e91af0618c46e183ac79c133cc077 = L.circleMarker(
+                [33.433371, -112.091128],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e54f35", "fillOpacity": 0.95, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 1}
+            ).addTo(map_5713bde75d9fa5666d6556be3c3ba91d);
+        
+    
+        var popup_ad2c9e328e96ae309a2ca6598bedec11 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_561c72e4298ed3bfafe6c4d42ff30b19 = $(`<div id="html_561c72e4298ed3bfafe6c4d42ff30b19" style="width: 100.0%; height: 100.0%;">#15  3154 — 15th Av & Pima St<br/>40.3 °C</div>`)[0];
+                popup_ad2c9e328e96ae309a2ca6598bedec11.setContent(html_561c72e4298ed3bfafe6c4d42ff30b19);
+            
+        
+
+        circle_marker_c37e91af0618c46e183ac79c133cc077.bindPopup(popup_ad2c9e328e96ae309a2ca6598bedec11)
+        ;
+
+        
+    
+    
+            var circle_marker_8f854c8095b128f448469e32460ef3cc = L.circleMarker(
+                [33.406571, -112.063877],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e54f35", "fillOpacity": 0.95, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 1}
+            ).addTo(map_5713bde75d9fa5666d6556be3c3ba91d);
+        
+    
+        var popup_3b4a45731cc51c39bffba0cb15542c2b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ca0bcffb167004b7d90b6ed88783b15b = $(`<div id="html_ca0bcffb167004b7d90b6ed88783b15b" style="width: 100.0%; height: 100.0%;">#16  150 — Broadway Rd & 7th St<br/>40.3 °C</div>`)[0];
+                popup_3b4a45731cc51c39bffba0cb15542c2b.setContent(html_ca0bcffb167004b7d90b6ed88783b15b);
+            
+        
+
+        circle_marker_8f854c8095b128f448469e32460ef3cc.bindPopup(popup_3b4a45731cc51c39bffba0cb15542c2b)
+        ;
+
+        
+    
+    
+            var circle_marker_bdc9300d76e11aa4762c56fbefac98d6 = L.circleMarker(
+                [33.400036, -112.085804],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e54f35", "fillOpacity": 0.95, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 1}
+            ).addTo(map_5713bde75d9fa5666d6556be3c3ba91d);
+        
+    
+        var popup_ea73483792e3ef49c09835ccf44fe387 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a456c7d9d9152946f8d9e54fd3e400ae = $(`<div id="html_a456c7d9d9152946f8d9e54fd3e400ae" style="width: 100.0%; height: 100.0%;">#17  1003 — Atlanta Av & 11th Av<br/>40.3 °C</div>`)[0];
+                popup_ea73483792e3ef49c09835ccf44fe387.setContent(html_a456c7d9d9152946f8d9e54fd3e400ae);
+            
+        
+
+        circle_marker_bdc9300d76e11aa4762c56fbefac98d6.bindPopup(popup_ea73483792e3ef49c09835ccf44fe387)
+        ;
+
+        
+    
+    
+            var circle_marker_c32793eb54242a6abde1bd62bd4f1f74 = L.circleMarker(
+                [33.399233, -112.081431],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e54f35", "fillOpacity": 0.95, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 1}
+            ).addTo(map_5713bde75d9fa5666d6556be3c3ba91d);
+        
+    
+        var popup_2ee896b30bc214902c14c47137f9cfda = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a0a4cd926e1d6eb2a9a85cf344e8ef81 = $(`<div id="html_a0a4cd926e1d6eb2a9a85cf344e8ef81" style="width: 100.0%; height: 100.0%;">#18  1622 — Roeser Rd & 7th Av<br/>40.2 °C</div>`)[0];
+                popup_2ee896b30bc214902c14c47137f9cfda.setContent(html_a0a4cd926e1d6eb2a9a85cf344e8ef81);
+            
+        
+
+        circle_marker_c32793eb54242a6abde1bd62bd4f1f74.bindPopup(popup_2ee896b30bc214902c14c47137f9cfda)
+        ;
+
+        
+    
+    
+            var circle_marker_f288b2cd439075e75d082738618530df = L.circleMarker(
+                [33.399493, -112.077273],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f3854e", "fillOpacity": 0.95, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 1}
+            ).addTo(map_5713bde75d9fa5666d6556be3c3ba91d);
+        
+    
+        var popup_ccb6ac274ce09f9c3124fbb7a5c430ae = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b4e867e74579de5e87ecf2fbb24f7266 = $(`<div id="html_b4e867e74579de5e87ecf2fbb24f7266" style="width: 100.0%; height: 100.0%;">#19  1623 — Roeser Rd & Montezuma St<br/>40.2 °C</div>`)[0];
+                popup_ccb6ac274ce09f9c3124fbb7a5c430ae.setContent(html_b4e867e74579de5e87ecf2fbb24f7266);
+            
+        
+
+        circle_marker_f288b2cd439075e75d082738618530df.bindPopup(popup_ccb6ac274ce09f9c3124fbb7a5c430ae)
+        ;
+
+        
+    
+    
+            var circle_marker_03532cafd7fc0f3ba484e5da650808b0 = L.circleMarker(
+                [33.406623, -112.059759],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f3854e", "fillOpacity": 0.95, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 1}
+            ).addTo(map_5713bde75d9fa5666d6556be3c3ba91d);
+        
+    
+        var popup_00a5ec2b2313f9f865a69f812f9f378b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5677d3d3b89a67d9cac1924128e8c880 = $(`<div id="html_5677d3d3b89a67d9cac1924128e8c880" style="width: 100.0%; height: 100.0%;">#20  151 — Broadway Rd & 9th St<br/>40.2 °C</div>`)[0];
+                popup_00a5ec2b2313f9f865a69f812f9f378b.setContent(html_5677d3d3b89a67d9cac1924128e8c880);
+            
+        
+
+        circle_marker_03532cafd7fc0f3ba484e5da650808b0.bindPopup(popup_00a5ec2b2313f9f865a69f812f9f378b)
+        ;
+
+        
+    
+    
+            var circle_marker_7b8cba69a7049ae3dd346135a9f54579 = L.circleMarker(
+                [33.406725, -112.038645],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fdb56a", "fillOpacity": 0.95, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 1}
+            ).addTo(map_5713bde75d9fa5666d6556be3c3ba91d);
+        
+    
+        var popup_5025fd94cf33106350bc06f3ba150d22 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e4661808346c6de9ce29314e7d6005a9 = $(`<div id="html_e4661808346c6de9ce29314e7d6005a9" style="width: 100.0%; height: 100.0%;">#21  130 — Broadway Rd & 20th St<br/>40.2 °C</div>`)[0];
+                popup_5025fd94cf33106350bc06f3ba150d22.setContent(html_e4661808346c6de9ce29314e7d6005a9);
+            
+        
+
+        circle_marker_7b8cba69a7049ae3dd346135a9f54579.bindPopup(popup_5025fd94cf33106350bc06f3ba150d22)
+        ;
+
+        
+    
+    
+            var circle_marker_5489aadbe7ee48633afa0262a3501191 = L.circleMarker(
+                [33.420615, -112.047584],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fdb56a", "fillOpacity": 0.95, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 1}
+            ).addTo(map_5713bde75d9fa5666d6556be3c3ba91d);
+        
+    
+        var popup_923d14099a113e01a9b3621b6de4d441 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_3ca912bc3122ff5ca3ff34a6c1e5a7f8 = $(`<div id="html_3ca912bc3122ff5ca3ff34a6c1e5a7f8" style="width: 100.0%; height: 100.0%;">#22  20115 — 16th St & Riverview Dr<br/>40.2 °C</div>`)[0];
+                popup_923d14099a113e01a9b3621b6de4d441.setContent(html_3ca912bc3122ff5ca3ff34a6c1e5a7f8);
+            
+        
+
+        circle_marker_5489aadbe7ee48633afa0262a3501191.bindPopup(popup_923d14099a113e01a9b3621b6de4d441)
+        ;
+
+        
+    
+    
+            var circle_marker_0fa9747da41b6a311f89436c0917a588 = L.circleMarker(
+                [33.420606, -112.047847],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fdb56a", "fillOpacity": 0.95, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 1}
+            ).addTo(map_5713bde75d9fa5666d6556be3c3ba91d);
+        
+    
+        var popup_cb24f1be76c993ede7890a37e8aa4c57 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a86b94ea26c8927ee5c4fe9d1c72eef2 = $(`<div id="html_a86b94ea26c8927ee5c4fe9d1c72eef2" style="width: 100.0%; height: 100.0%;">#23  20116 — 16th St & Riverview Dr<br/>40.2 °C</div>`)[0];
+                popup_cb24f1be76c993ede7890a37e8aa4c57.setContent(html_a86b94ea26c8927ee5c4fe9d1c72eef2);
+            
+        
+
+        circle_marker_0fa9747da41b6a311f89436c0917a588.bindPopup(popup_cb24f1be76c993ede7890a37e8aa4c57)
+        ;
+
+        
+    
+    
+            var circle_marker_a12999d655a426642aad8537017a0194 = L.circleMarker(
+                [33.406643, -112.046476],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fdb56a", "fillOpacity": 0.95, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 1}
+            ).addTo(map_5713bde75d9fa5666d6556be3c3ba91d);
+        
+    
+        var popup_7bf681971e6c41bd8b57133807a8df0f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_9822f277e321ab8f1c44d84085045031 = $(`<div id="html_9822f277e321ab8f1c44d84085045031" style="width: 100.0%; height: 100.0%;">#24  129 — Broadway Rd & 16th St<br/>40.2 °C</div>`)[0];
+                popup_7bf681971e6c41bd8b57133807a8df0f.setContent(html_9822f277e321ab8f1c44d84085045031);
+            
+        
+
+        circle_marker_a12999d655a426642aad8537017a0194.bindPopup(popup_7bf681971e6c41bd8b57133807a8df0f)
+        ;
+
+        
+    
+    
+            var circle_marker_85a0eb13e1d346dbe2d3396dca5d7796 = L.circleMarker(
+                [33.406639, -112.055173],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fdb56a", "fillOpacity": 0.95, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 1}
+            ).addTo(map_5713bde75d9fa5666d6556be3c3ba91d);
+        
+    
+        var popup_12af26f593a70161e628905b6ba77ae6 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_aaabaad3797405ad603ce58d92516d66 = $(`<div id="html_aaabaad3797405ad603ce58d92516d66" style="width: 100.0%; height: 100.0%;">#25  127 — Broadway Rd & 12th St<br/>40.2 °C</div>`)[0];
+                popup_12af26f593a70161e628905b6ba77ae6.setContent(html_aaabaad3797405ad603ce58d92516d66);
+            
+        
+
+        circle_marker_85a0eb13e1d346dbe2d3396dca5d7796.bindPopup(popup_12af26f593a70161e628905b6ba77ae6)
+        ;
+
+        
+    
+    
+            var circle_marker_830d87df594deeb911a22be34c985dbf = L.circleMarker(
+                [33.406697, -112.042756],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fdb56a", "fillOpacity": 0.95, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 1}
+            ).addTo(map_5713bde75d9fa5666d6556be3c3ba91d);
+        
+    
+        var popup_d5206f8e5417b7999ceebb90a22d753b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_baf62d796a23e7457b90f97e4c41ad6f = $(`<div id="html_baf62d796a23e7457b90f97e4c41ad6f" style="width: 100.0%; height: 100.0%;">#26  125 — Broadway Rd & 18th St<br/>40.2 °C</div>`)[0];
+                popup_d5206f8e5417b7999ceebb90a22d753b.setContent(html_baf62d796a23e7457b90f97e4c41ad6f);
+            
+        
+
+        circle_marker_830d87df594deeb911a22be34c985dbf.bindPopup(popup_d5206f8e5417b7999ceebb90a22d753b)
+        ;
+
+        
+    
+    
+            var circle_marker_38300a9e108b1f7db58b2254d7828aa0 = L.circleMarker(
+                [33.406659, -112.051018],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fed38c", "fillOpacity": 0.95, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 1}
+            ).addTo(map_5713bde75d9fa5666d6556be3c3ba91d);
+        
+    
+        var popup_b42f06f023ef705fca1c62d0e87ce391 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e838b1d7c9107a2a7d170c7f4b514dd7 = $(`<div id="html_e838b1d7c9107a2a7d170c7f4b514dd7" style="width: 100.0%; height: 100.0%;">#27  128 — Broadway Rd & 14th St<br/>40.2 °C</div>`)[0];
+                popup_b42f06f023ef705fca1c62d0e87ce391.setContent(html_e838b1d7c9107a2a7d170c7f4b514dd7);
+            
+        
+
+        circle_marker_38300a9e108b1f7db58b2254d7828aa0.bindPopup(popup_b42f06f023ef705fca1c62d0e87ce391)
+        ;
+
+        
+    
+    
+            var circle_marker_a792d7be4871ed58a603d7aa794d2f35 = L.circleMarker(
+                [33.377608, -112.082137],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fed38c", "fillOpacity": 0.95, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 1}
+            ).addTo(map_5713bde75d9fa5666d6556be3c3ba91d);
+        
+    
+        var popup_e8d28ac4650f54be1a520c49e0fae8e8 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_0cb5402523dda20f83823b3d3b9d8efc = $(`<div id="html_0cb5402523dda20f83823b3d3b9d8efc" style="width: 100.0%; height: 100.0%;">#28  1006 — Baseline Rd & 7th Av<br/>40.1 °C</div>`)[0];
+                popup_e8d28ac4650f54be1a520c49e0fae8e8.setContent(html_0cb5402523dda20f83823b3d3b9d8efc);
+            
+        
+
+        circle_marker_a792d7be4871ed58a603d7aa794d2f35.bindPopup(popup_e8d28ac4650f54be1a520c49e0fae8e8)
+        ;
+
+        
+    
+    
+            var circle_marker_a082e6a68015faa4b4e5ee15676f569d = L.circleMarker(
+                [33.377642, -112.078664],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fed38c", "fillOpacity": 0.95, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 1}
+            ).addTo(map_5713bde75d9fa5666d6556be3c3ba91d);
+        
+    
+        var popup_662b6bd4b06e39cd0dd64a623de5aba8 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_25821b38f2a002dba3e8b81fd061d82a = $(`<div id="html_25821b38f2a002dba3e8b81fd061d82a" style="width: 100.0%; height: 100.0%;">#29  1011 — Baseline Rd & 4th Av<br/>40.1 °C</div>`)[0];
+                popup_662b6bd4b06e39cd0dd64a623de5aba8.setContent(html_25821b38f2a002dba3e8b81fd061d82a);
+            
+        
+
+        circle_marker_a082e6a68015faa4b4e5ee15676f569d.bindPopup(popup_662b6bd4b06e39cd0dd64a623de5aba8)
+        ;
+
+        
+    
+    
+            var circle_marker_4024d8fb1594882c079516f6ee048d97 = L.circleMarker(
+                [33.396069, -112.081834],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fed38c", "fillOpacity": 0.95, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 1}
+            ).addTo(map_5713bde75d9fa5666d6556be3c3ba91d);
+        
+    
+        var popup_c374feb346302ae31153a5cf63ff4b7f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c4948821d94dcf8b60acd44873f0d572 = $(`<div id="html_c4948821d94dcf8b60acd44873f0d572" style="width: 100.0%; height: 100.0%;">#30  2604 — 7th Av & Sunland Av<br/>40.1 °C</div>`)[0];
+                popup_c374feb346302ae31153a5cf63ff4b7f.setContent(html_c4948821d94dcf8b60acd44873f0d572);
+            
+        
+
+        circle_marker_4024d8fb1594882c079516f6ee048d97.bindPopup(popup_c374feb346302ae31153a5cf63ff4b7f)
+        ;
+
+        
+    
+    
+            var circle_marker_27e689364261591febfe4379d48d16ee = L.circleMarker(
+                [33.377614, -112.091452],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fff0ae", "fillOpacity": 0.95, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 1}
+            ).addTo(map_5713bde75d9fa5666d6556be3c3ba91d);
+        
+    
+        var popup_401b8c501d3e1a48e8138f5882a31e0e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_621c508d39d4c42bfa8f7624ea553e4d = $(`<div id="html_621c508d39d4c42bfa8f7624ea553e4d" style="width: 100.0%; height: 100.0%;">#31  1008 — Baseline Rd & 15th Av<br/>40.1 °C</div>`)[0];
+                popup_401b8c501d3e1a48e8138f5882a31e0e.setContent(html_621c508d39d4c42bfa8f7624ea553e4d);
+            
+        
+
+        circle_marker_27e689364261591febfe4379d48d16ee.bindPopup(popup_401b8c501d3e1a48e8138f5882a31e0e)
+        ;
+
+        
+    
+    
+            var circle_marker_50445368f955d54ade4fddce06dd42ce = L.circleMarker(
+                [33.392139, -112.077381],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fff0ae", "fillOpacity": 0.95, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 1}
+            ).addTo(map_5713bde75d9fa5666d6556be3c3ba91d);
+        
+    
+        var popup_07606472188341ba16b34ee4f6f378fa = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5b40da139b72b7a27a8ee2f488f92878 = $(`<div id="html_5b40da139b72b7a27a8ee2f488f92878" style="width: 100.0%; height: 100.0%;">#32  1648 — Southern Av & Montezuma St<br/>40.1 °C</div>`)[0];
+                popup_07606472188341ba16b34ee4f6f378fa.setContent(html_5b40da139b72b7a27a8ee2f488f92878);
+            
+        
+
+        circle_marker_50445368f955d54ade4fddce06dd42ce.bindPopup(popup_07606472188341ba16b34ee4f6f378fa)
+        ;
+
+        
+    
+    
+            var circle_marker_fa9c34d385687d6f884323dfa05d2da0 = L.circleMarker(
+                [33.392122, -112.087765],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fff0ae", "fillOpacity": 0.95, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 1}
+            ).addTo(map_5713bde75d9fa5666d6556be3c3ba91d);
+        
+    
+        var popup_76d352057802cbe5ed9ce7b71b5f0922 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_2e631d2470b7093c3ee6c631ecdffa44 = $(`<div id="html_2e631d2470b7093c3ee6c631ecdffa44" style="width: 100.0%; height: 100.0%;">#33  1631 — Southern Av & 13th Av<br/>40.1 °C</div>`)[0];
+                popup_76d352057802cbe5ed9ce7b71b5f0922.setContent(html_2e631d2470b7093c3ee6c631ecdffa44);
+            
+        
+
+        circle_marker_fa9c34d385687d6f884323dfa05d2da0.bindPopup(popup_76d352057802cbe5ed9ce7b71b5f0922)
+        ;
+
+        
+    
+    
+            var circle_marker_69e06d1a08cfe1e94c5a58b5e081ecf1 = L.circleMarker(
+                [33.392127, -112.081366],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fff0ae", "fillOpacity": 0.95, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 1}
+            ).addTo(map_5713bde75d9fa5666d6556be3c3ba91d);
+        
+    
+        var popup_e70da8e3a4ad79f9f79bf92943d62bc3 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_085a91e8b4a89b6a28de883050b68346 = $(`<div id="html_085a91e8b4a89b6a28de883050b68346" style="width: 100.0%; height: 100.0%;">#34  1630 — Southern Av & 7th Av<br/>40.1 °C</div>`)[0];
+                popup_e70da8e3a4ad79f9f79bf92943d62bc3.setContent(html_085a91e8b4a89b6a28de883050b68346);
+            
+        
+
+        circle_marker_69e06d1a08cfe1e94c5a58b5e081ecf1.bindPopup(popup_e70da8e3a4ad79f9f79bf92943d62bc3)
+        ;
+
+        
+    
+    
+            var circle_marker_ca175151d18540dc62daf4a79e070d9b = L.circleMarker(
+                [33.392719, -112.081811],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fff0ae", "fillOpacity": 0.95, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 1}
+            ).addTo(map_5713bde75d9fa5666d6556be3c3ba91d);
+        
+    
+        var popup_0e7a1fea403ce691a9aeaaa7e1eb950a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1fc60ca5299755a17744c6fe6a688839 = $(`<div id="html_1fc60ca5299755a17744c6fe6a688839" style="width: 100.0%; height: 100.0%;">#35  2603 — 7th Av & Southern Av<br/>40.1 °C</div>`)[0];
+                popup_0e7a1fea403ce691a9aeaaa7e1eb950a.setContent(html_1fc60ca5299755a17744c6fe6a688839);
+            
+        
+
+        circle_marker_ca175151d18540dc62daf4a79e070d9b.bindPopup(popup_0e7a1fea403ce691a9aeaaa7e1eb950a)
+        ;
+
+        
+    
+    
+            map_5713bde75d9fa5666d6556be3c3ba91d.fitBounds(
+                [[33.377608, -112.091452], [33.433529, -112.038645]],
+                {}
+            );
+        
+    
+            tile_layer_eac80fb9515bc397d5d736d11ed87f7c.addTo(map_5713bde75d9fa5666d6556be3c3ba91d);
+        
+    
+            geo_json_1c6099dd8614deac6577c6be3e6b6f3b.addTo(map_5713bde75d9fa5666d6556be3c3ba91d);
+        
+</script>
+</html>
