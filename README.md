@@ -2,6 +2,8 @@
 
 **FortyGuard Hackathon '26 — Track 5 (Model Designing)**
 
+**Live demo:** https://iamsamuelk.github.io/fortyguard-phoenix-heat-agent/
+
 ## The problem
 
 Phoenix riders wait for buses at stops that reach dangerous peak heat, and
